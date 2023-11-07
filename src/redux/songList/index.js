@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  displaySong,
-  fetchSongs,
-} from "./songListSlice";
+    fetchSongs,
+    displaySong,
+  } from "./actions";
 import NavBar from "../../components/NavBar";
 import {
   SongListContainer,

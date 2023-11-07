@@ -28,17 +28,4 @@ const songListSlice = createSlice({
   },
 });
 
-export const fetchSongs = () => {
-  return async (dispatch) => {
-    try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/todos');
-      const json = await response.json();
-      dispatch(displaySong(json));
-    } catch (error) {
-      console.error('Error fetching songs:', error);
-    }
-  };
-};
-
-export const { displaySong, searchSong, addSong, deleteSong, updateSong } = songListSlice.actions;
 export default songListSlice.reducer;

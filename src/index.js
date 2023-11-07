@@ -1,9 +1,13 @@
+//index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
-import SongList from './features/songList/SongList';
-import './index.css'
+import configureAppStore from './store/configureStore';
+import SongList from './redux/songList/index';
+import './index.css';
+
+const store = configureAppStore();
+
 const App = () => {
   return (
     <Provider store={store}>
@@ -12,11 +16,7 @@ const App = () => {
   );
 };
 
-// Replace the following line
-// ReactDOM.render(<App />, document.getElementById('root'));
-
-// With this line
 const rootElement = document.getElementById('root');
 if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(<App />);
+  ReactDOM.render(<App />, rootElement);
 }
