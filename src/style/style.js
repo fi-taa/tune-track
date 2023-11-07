@@ -7,7 +7,7 @@ export const SongListContainer = styled(Flex)`
   align-items: center;
   padding: 20px;
   margin: 0;
-  width: screen;
+  width: 100%;
   background-color: #27323e;
 `;
 
@@ -19,7 +19,7 @@ export const InputContainer = styled(Flex)`
 `;
 
 export const AddSongContainer = styled(Flex)`
-  justify-content: flex-end;
+margin-top: 20px;
   width: 100%;
 `;
 
@@ -31,7 +31,8 @@ export const AddButton = styled(Button)`
   border-radius: 5px;
   cursor: pointer;
   &:hover {
-    background-color: #008cba;
+    background-color: #ffffff;
+    color: #27323e;
   }
 `;
 
@@ -44,7 +45,7 @@ export const SearchShowContainer = styled(Flex)`
 `;
 
 export const SearchContainer = styled(Box)`
-  width: 30%;
+  width: 40%;
   margin-bottom: 20px;
 `;
 
@@ -77,11 +78,11 @@ export const EditableInput = styled.input`
 `;
 
 export const AddSongInput = styled.input`
-  width: 30%;
+  width: 40%;
   padding: 12px;
   border: 1px solid #d1d1d1;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-bottom: 10px;
   transition: border-color 0.3s, box-shadow 0.3s;
 
   &:focus {
@@ -93,7 +94,7 @@ export const AddSongInput = styled.input`
 
 export const ShowMoreContainer = styled.div`
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: 20px;
 `;
 
@@ -108,7 +109,8 @@ export const ShowMoreButton = styled(Button)`
   transition: background-color 0.3s;
   opacity: 0.2;
   &:hover {
-    background-color: #7e8daf;
+    background-color: #ffffff;
+    color: #27323e;
     opacity: 1;
   }
 `;
@@ -130,6 +132,7 @@ export const RippleDiv = styled.div`
 `;
 
 export const TitleButtonContainer = styled(Flex)`
+  flex-direction: column;
   align-items: center;
   width: 100%;
 `;
@@ -137,29 +140,26 @@ export const TitleButtonContainer = styled(Flex)`
 export const SongListUl = styled.ul`
   list-style-type: none;
   padding: 0;
-  width: 0%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 `;
 
 export const SongItem = styled.li`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-  width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 1rem;
   border-radius: 10px;
 `;
 
 export const ButtonsContainer = styled(Flex)`
-  width: 30%;
+  width: 100%;
   align-items: center;
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 `;
 
 export const UpdateButton = styled(Button)`
@@ -167,6 +167,8 @@ export const UpdateButton = styled(Button)`
   color: white;
   background-color: #27323e;
   opacity: 0.6;
+  width: 100px;
+  margin: 5px;
   &:hover {
     border: 1px solid #008cba;
     color: #008cba;
@@ -178,6 +180,8 @@ export const DeleteButton = styled(Button)`
   color: white;
   background-color: #27323e;
   opacity: 0.6;
+  width: 100px;
+  margin: 5px;
   &:hover {
     border: 1px solid #f44336;
     color: #f44336;
@@ -205,24 +209,22 @@ export const ModalContainer = styled(Box)`
 
 // Media queries for responsiveness
 const media = {
-  mobile: "@media(max-width: 600px)",
-  web: "@media(min-width: 601px)",
+  mobile: "@media (max-width: 600px)",
+  tablet: "@media (min-width: 601px) and (max-width: 960px)",
+  desktop: "@media (min-width: 961px)",
 };
 
 export const SongTitle = styled(Text)`
   color: white;
-  width: 70%;
-  ${media.mobile} {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
+  width: 100%;
+  text-align: center;
+  ${media.tablet} {
+    width: 80%;
   }
 `;
 
-// Adjusted styles for better responsiveness
 export const AdjustedSongListUl = styled(SongListUl)`
-  ${media.web} {
+  ${media.desktop} {
     width: 60%;
   }
 `;
@@ -232,7 +234,10 @@ export const AdjustedButtonsContainer = styled(ButtonsContainer)`
     width: 100%;
     justify-content: center;
   }
-  ${media.web} {
-    width: 20%;
+  ${media.tablet} {
+    width: 50%;
+  }
+  ${media.desktop} {
+    width: 30%;
   }
 `;
