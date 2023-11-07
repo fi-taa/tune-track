@@ -5,8 +5,8 @@ Tune-Track is a web application designed for music enthusiasts to manage their s
 ## Features
 
 - Add new songs to your collection.
-- Update existing song details, including title and artist.
 - Search for specific songs within your library.
+- update song from collection.
 - Delete songs you no longer want to keep.
 
 ## Technologies Used
@@ -16,6 +16,7 @@ Tune-Track is a web application designed for music enthusiasts to manage their s
 - React-Redux: Official React bindings for Redux.
 - Emotion: CSS-in-JS library for styling React components.
 - Rebass: React primitive UI components built with styled-system.
+- tailwind css : for styling React components.
 - ESLint: Pluggable linting utility for JavaScript and JSX.
 
 ## Installation
